@@ -118,7 +118,7 @@ reg save HKLM\SAM sam1
 `
 reg save HKLM\SYSTEM system1
 `
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 
 
@@ -136,20 +136,20 @@ And I get the SAM hashes with the tool *scretsdump.py*
 
 `python3 /usr/share/doc/python3-impacket/examples/secretsdump.py  -system system1 -sam sam1 LOCAL`
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 I filter the hash file and get the nt hash.
 
-![Alt text](image-2.png)
+![Alt text](images/image-2.png)
 
 Then use crackstation
 
-![Alt text](image-3.png)
+![Alt text](images/image-3.png)
 
 
 And reutilize credentials in the web portal.
 
-![Alt text](image-4.png)
+![Alt text](images/image-4.png)
 
 
 
@@ -158,7 +158,7 @@ And reutilize credentials in the web portal.
 
 I explored the portal, and the portal has the capability to execute commands.
 
-![Alt text](image-5.png)
+![Alt text](images/image-5.png)
 
 
 Execute a new revshell.
@@ -167,7 +167,7 @@ Execute a new revshell.
 ![picture 5](images/bd9e8c6cdb176195078d8fa40a7a129d5e819317bf054ec6a541da23d7cc0c0d.png)  
 
 
-![Alt text](image-6.png)
+![Alt text](images/image-6.png)
 
 
 # User flag
@@ -180,7 +180,7 @@ Show the flag.
 
 It seems a credential store in a file.
 
-![Alt text](image-8.png)
+![Alt text](images/image-8.png)
 
 
 The open with the powershell's tools Import-cliXml:
@@ -199,25 +199,25 @@ I use the same tool.
 
 `(Import-cliXml -Path iot-admin.xml).GetNetworkCredential().password`
 
-![Alt text](image-9.png)
+![Alt text](images/image-9.png)
 
 And reutilize credentials in the web portal.
 
-![Alt text](image-10.png)
+![Alt text](images/image-10.png)
 
 
-![Alt text](image-12.png)
+![Alt text](images/image-12.png)
 
-![Alt text](image-13.png)
+![Alt text](images/image-13.png)
 
 And show the flag.
 
-![Alt text](image-14.png)
+![Alt text](images/image-14.png)
 
 
 Using the same technique previously employed.
 
 `(Import-cliXml -Path root.txt).GetNetworkCredential().password`
 
-![Alt text](image-15.png)
+![Alt text](images/image-15.png)
 
